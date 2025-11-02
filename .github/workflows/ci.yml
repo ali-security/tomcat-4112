@@ -34,11 +34,11 @@ jobs:
         isMain:
           - ${{ contains(github.ref, 'main') }}
         java: [ 11, 17, 21, 22 ]
-        os: [ ubuntu-latest, windows-latest ]
+        os: [ ubuntu-22.04, windows-2022 ]
         exclude:
           - isMain: true
             java: 17
-          - os: windows-latest
+          - os: windows-2022
             java: 22
     name: JDK${{ matrix.java }} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
